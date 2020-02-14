@@ -13,9 +13,9 @@ export PATH=`pwd`/.cargo/bin/:$PATH
 cargo fmt --all -- --check
 cargo build
 
-mkdir ../inst
-PREFIX=../inst make install
-test -f ../inst/bin/snare
+mkdir test_install
+PREFIX=test_install make install
+test -f test_install/bin/snare
 
 which cargo-deny | cargo install cargo-deny
 cargo-deny check license
