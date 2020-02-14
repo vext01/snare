@@ -16,6 +16,7 @@ install:
 	install -c -m 444 snare.conf.example ${PREFIX}/share/examples/snare
 
 distrib:
+	git status
 	test "X`git status --porcelain`" = "X"
 	@read v?'snare version: ' \
 	  && mkdir snare-$$v \
