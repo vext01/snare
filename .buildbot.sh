@@ -13,14 +13,9 @@ export PATH=`pwd`/.cargo/bin/:$PATH
 cargo fmt --all -- --check
 cargo build
 
-which cargo-deny | cargo install cargo-deny
-cargo-deny check license
-
 mkdir ../inst
 PREFIX=../inst make install
 test -f ../inst/bin/snare
 
-rm -rf .rustup .cargo rustup.sh
-echo 9999.8888.7777 | make distrib
-test -f snare-9999.8888.7777.tgz
-rm snare-9999.8888.7777.tgz
+which cargo-deny | cargo install cargo-deny
+cargo-deny check license
